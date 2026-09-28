@@ -1,0 +1,31 @@
+<% /* Mensajes flash simples vía query string (?creada=1, ?actualizada=1, ...) */ %>
+<% if (typeof errorEliminar !== 'undefined' && errorEliminar) { %>
+  <div class="mb-4 px-4 py-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm font-medium">
+    ⚠️ No se puede eliminar la categoría porque tiene tareas activas asignadas. Reasigna o elimina primero sus tareas.
+  </div>
+<% } %>
+<% if (req.query.creada) { %>
+  <div class="mb-4 px-4 py-3 rounded-xl bg-green-50 border border-green-200 text-green-700 text-sm font-medium">
+    ✅ Tarea creada correctamente (quedó en estado incompleta).
+  </div>
+<% } %>
+<% if (req.query.actualizada) { %>
+  <div class="mb-4 px-4 py-3 rounded-xl bg-green-50 border border-green-200 text-green-700 text-sm font-medium">
+    ✅ Tarea actualizada correctamente.
+  </div>
+<% } %>
+<% if (req.query.completada) { %>
+  <div class="mb-4 px-4 py-3 rounded-xl bg-green-50 border border-green-200 text-green-700 text-sm font-medium">
+    ✅ Tarea marcada como completada.
+  </div>
+<% } %>
+<% if (req.query.eliminada) { %>
+  <div class="mb-4 px-4 py-3 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 text-sm font-medium">
+    🗑 Tarea eliminada (borrado lógico: conserva fecha de eliminación en la base de datos).
+  </div>
+<% } %>
+<% if (req.query.categoriaCreada) { %>
+  <div class="mb-4 px-4 py-3 rounded-xl bg-green-50 border border-green-200 text-green-700 text-sm font-medium">
+    ✅ Categoría creada correctamente.
+  </div>
+<% } %>

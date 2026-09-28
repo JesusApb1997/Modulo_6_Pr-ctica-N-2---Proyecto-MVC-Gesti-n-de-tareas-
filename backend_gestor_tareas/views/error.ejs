@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= codigo %> · Gestor de Tareas</title>
+  <link rel="stylesheet" href="/css/output.css">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800 grid place-items-center px-4">
+
+  <div class="w-full max-w-xl bg-white border border-slate-200 rounded-2xl p-10 text-center shadow-sm">
+    <p class="text-5xl mb-4">
+      <% if (codigo === 404) { %>🔍<% } else if (codigo === 400) { %>⚠️<% } else { %>💥<% } %>
+    </p>
+    <h1 class="text-2xl font-bold text-slate-900 mb-2"><%= codigo %> · <%= titulo %></h1>
+    <p class="text-slate-600 mb-6"><%= mensaje %></p>
+    <a href="/tareas"
+       class="inline-block px-5 py-2.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
+      Ir al listado de tareas
+    </a>
+  </div>
+
+</body>
+</html>

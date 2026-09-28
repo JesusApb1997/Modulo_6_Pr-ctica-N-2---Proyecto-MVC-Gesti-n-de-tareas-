@@ -1,0 +1,19 @@
+{
+  "name": "frontend-gestor-tareas",
+  "version": "1.0.0",
+  "description": "Frontend del Gestor de Tareas — HTML + Tailwind CSS + JavaScript con Axios (consumo de la API REST del backend MVC)",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "css": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css --minify",
+    "css:watch": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css --minify --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.14",
+    "tailwindcss": "^4.1.14"
+  },
+  "dependencies": {
+    "axios": "^1.20.0"
+  }
+}

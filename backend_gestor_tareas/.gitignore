@@ -1,0 +1,16 @@
+# Dependencias
+node_modules/
+
+# Credenciales y configuración local (¡NUNCA subir el .env a GitHub!)
+.env
+.env.local
+.env.*.local
+
+# Registros
+*.log
+npm-debug.log*
+
+
+# Sistema
+.DS_Store
+Thumbs.db

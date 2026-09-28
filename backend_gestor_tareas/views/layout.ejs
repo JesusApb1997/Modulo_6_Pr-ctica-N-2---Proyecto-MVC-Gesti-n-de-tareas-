@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= titulo %> · Gestor de Tareas</title>
+  <!-- Tailwind CSS (compilado desde public/css/input.css con: npm run css) -->
+  <link rel="stylesheet" href="/css/output.css">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="bg-white border-b border-slate-200 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <a href="/tareas" class="flex items-center gap-2 text-lg font-bold text-slate-900">
+        <span class="w-9 h-9 grid place-items-center rounded-xl bg-blue-600 text-white text-xl">✓</span>
+        Gestor de Tareas
+      </a>
+
+      <nav class="flex flex-wrap items-center gap-2 text-sm">
+        <% /* filtroActual es opcional: las páginas que no lo pasan no deben romper el navbar */ %>
+        <% const filtroNav = typeof filtroActual !== 'undefined' ? filtroActual : null; %>
+        <a href="/tareas"
+           class="px-3 py-1.5 rounded-lg font-medium transition
+                  <%= filtroNav === 'todas' ? 'bg-blue-600 text-white' : 'text-slate-600 hover:bg-slate-100' %>">
+          Todas
+        </a>
+        <a href="/tareas/completas"
+           class="px-3 py-1.5 rounded-lg font-medium transition
+                  <%= filtroNav === 'completas' ? 'bg-blue-600 text-white' : 'text-slate-600 hover:bg-slate-100' %>">
+          Completas
+        </a>
+        <a href="/tareas/incompletas"
+           class="px-3 py-1.5 rounded-lg font-medium transition
+                  <%= filtroNav === 'incompletas' ? 'bg-blue-600 text-white' : 'text-slate-600 hover:bg-slate-100' %>">
+          Pendientes
+        </a>
+        <a href="/categorias"
+           class="px-3 py-1.5 rounded-lg font-medium text-slate-600 hover:bg-slate-100 transition">
+          Categorías
+        </a>
+        <a href="/tareas/nueva"
+           class="ml-1 px-4 py-1.5 rounded-lg font-semibold bg-blue-600 text-white hover:bg-blue-700 transition shadow-sm">
+          + Nueva tarea
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= CONTENIDO ================= -->
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <%- body %>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="max-w-6xl mx-auto px-4 pb-8 text-center text-xs text-slate-400">
+    Gestor de Tareas — Módulo 6.1 · Node.js + Express + EJS + Tailwind CSS + MongoDB
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "conexion-mongodb",
+  "version": "1.0.0",
+  "description": "Gestor de tareas FullStack MVC - Node.js + Express + EJS + Tailwind CSS + MongoDB (Módulo 6.1)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node scripts/seed.js",
+    "dev": "concurrently -n servidor,css -c blue,green \"nodemon server.js\" \"tailwindcss -i ./public/css/input.css -o ./public/css/output.css --minify --watch\"",
+    "css": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css --minify",
+    "css:watch": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css --minify --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "express-ejs-layouts": "^2.5.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^9.9.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.14",
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.14",
+    "tailwindcss": "^4.1.14"
+  }
+}
