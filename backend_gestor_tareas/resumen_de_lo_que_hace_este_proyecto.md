@@ -1,7 +1,7 @@
 # 📋 Gestor de Tareas — API REST (Módulo 5.3)
 
 Proyecto backend: **API REST de gestión de tareas (Todo list)** construida con
-**Node.js + Express + MongoDB (Mongoose)** aplicando buenas prácticas.
+**Node.js + Express + MongoDB (Mongoose)** aplicando buenas prácticas....
 
 ## ✨ Funcionalidades
 
